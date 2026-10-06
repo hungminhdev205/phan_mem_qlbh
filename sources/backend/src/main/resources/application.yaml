@@ -1,0 +1,32 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/GoldChuan2026
+    username: postgres
+    password: admin
+    hikari:
+      pool-name: data-gold-chuan2026
+      maximum-pool-size: 20
+      minimum-idle: 10
+
+jwt:
+  secret: QE5jUmZValhuMnI1dTh4L0E/RChHK0tiUGRTZ1ZrWXA=
+  issuer: api
+  expiration: 86400000
+
+logging:
+  file:
+    name: logs/app.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: logs/app-%d{yyyy-MM-dd}.log
+      max-history: 30
+      total-size-cap: 1GB
+      clean-history-on-start: false
+  level:
+    root: INFO
+    sql: INFO
+    web: INFO
+    com.app.backend: INFO

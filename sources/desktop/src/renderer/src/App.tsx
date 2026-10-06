@@ -1,9 +1,7 @@
-function App(): React.JSX.Element {
+import AuthPage from './features/auth/page'
 
-  return (
-    <>
-    </>
-  )
+function App(): React.JSX.Element {
+  return <AuthPage />
 }
 
 export default App

@@ -17,7 +17,7 @@ BEGIN
 
     INSERT INTO auth.permissions (fk_create_by, code, name, description, scope) VALUES (v_account_id, 'SYSTEM_ADMIN', 'Quản trị hệ thống', 'Cho phép quản trị toàn bộ hệ thống', 'SYSTEM') RETURNING id INTO v_permission_id;
 
-    INSERT INTO auth.roles (fk_company_id, fk_create_by, name, description) VALUES (null, v_account_id, 'COMPANY_ADMIN', 'Quản trị viên của công ty') RETURNING id INTO v_role_id;
+    INSERT INTO auth.roles (fk_company_id, fk_create_by, name, description) VALUES (null, v_account_id, 'SYSTEM_ADMIN', 'Quản trị viên hệ thống') RETURNING id INTO v_role_id;
 
     INSERT INTO auth.role_permissions (fk_role_id, fk_permission_id) VALUES (v_role_id, v_permission_id);
 

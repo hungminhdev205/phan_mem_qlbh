@@ -1,7 +1,48 @@
+@import '@fontsource/be-vietnam-pro/400.css';
+@import '@fontsource/be-vietnam-pro/500.css';
+@import '@fontsource/be-vietnam-pro/600.css';
+@import '@fontsource/be-vietnam-pro/700.css';
+@import 'tailwindcss';
+
+:root {
+  --app-color-bg: #eef2f7;
+  --app-color-dashboard-bg: #f6f8fb;
+  --app-color-surface: #ffffff;
+  --app-color-text: #18202f;
+  --app-color-label: #344054;
+  --app-color-muted: #667085;
+  --app-color-border: #d7dee9;
+  --app-color-input-border: #c9d3df;
+  --app-color-primary: #0f766e;
+  --app-color-primary-ring: rgba(15, 118, 110, 0.16);
+  --app-color-danger: #9f2a1d;
+  --app-color-danger-bg: #fff4f2;
+  --app-color-danger-border: #f4b4a8;
+  --app-color-code-bg: #101828;
+  --app-color-code-text: #d9e7ff;
+  --app-color-login-glow-cool: rgba(18, 96, 120, 0.16);
+  --app-color-login-glow-warm: rgba(191, 92, 54, 0.14);
+  --app-shadow-panel: 0 24px 60px rgba(28, 40, 60, 0.12);
+}
+
+@theme {
+  --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+  --color-app-bg: var(--app-color-bg);
+  --color-app-dashboard-bg: var(--app-color-dashboard-bg);
+  --color-app-surface: var(--app-color-surface);
+  --color-app-text: var(--app-color-text);
+  --color-app-label: var(--app-color-label);
+  --color-app-muted: var(--app-color-muted);
+  --color-app-border: var(--app-color-border);
+  --color-app-input-border: var(--app-color-input-border);
+  --color-app-primary: var(--app-color-primary);
+  --color-app-danger: var(--app-color-danger);
+  --color-app-danger-bg: var(--app-color-danger-bg);
+  --color-app-danger-border: var(--app-color-danger-border);
+  --color-app-code-bg: var(--app-color-code-bg);
+  --color-app-code-text: var(--app-color-code-text);
+}
+
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  user-select: none;
+  margin: 0;
 }

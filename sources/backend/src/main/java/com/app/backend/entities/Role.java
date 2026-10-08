@@ -1,13 +1,16 @@
 package com.app.backend.entities;
 
+import com.app.backend.common.enums.RecordType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.JdbcType;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.dialect.type.PostgreSQLEnumJdbcType;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -44,11 +47,22 @@ public class Role {
 
     @Size(max = 255)
     @NotNull
+    @Column(name = "code", nullable = false)
+    private String code;
+
+    @Size(max = 255)
+    @NotNull
     @Column(name = "name", nullable = false)
     private String name;
 
     @Column(name = "description", length = Integer.MAX_VALUE)
     private String description;
+
+    @ColumnDefault("'active'")
+    @Enumerated(EnumType.STRING)
+    @JdbcType(PostgreSQLEnumJdbcType.class)
+    @Column(name = "status", columnDefinition = "record_type not null")
+    private RecordType status;
 
     @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "created_at")

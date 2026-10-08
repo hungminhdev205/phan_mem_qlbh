@@ -1,0 +1,103 @@
+<mxfile host="app.diagrams.net" modified="2026-10-07T00:00:00.000Z" agent="opencode" version="24.7.17" type="device">
+  <diagram id="c2d3e4f5a6b7180" name="Hình 2.x. Biểu đồ tuần tự chức năng báo cáo thống kê">
+    <mxGraphModel dx="1000" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1110" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ll1" value="Người quản lý" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;participant=seqActorStick;size=88;align=center;verticalAlign=bottom;spacingBottom=4;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#333333;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1.5;lifelineColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="160" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="ll2" value="«Frontend»&lt;br&gt;React/Electron" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#333333;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1.5;lifelineColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="210" y="40" width="160" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#EEEEEE;strokeColor=#666666;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="281" y="200" width="16" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="ll3" value="«Controller»&lt;br&gt;ReportController" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#333333;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=1.5;lifelineColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="380" y="40" width="160" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#EEEEEE;strokeColor=#666666;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="451" y="280" width="16" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="ll4" value="«Service»&lt;br&gt;ReportService" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#333333;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1.5;lifelineColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="550" y="40" width="160" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#EEEEEE;strokeColor=#666666;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="621" y="350" width="16" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="ll5" value="«Repository»&lt;br&gt;ReportRepository" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#333333;fillColor=#E1D5E7;strokeColor=#9673A6;strokeWidth=1.5;lifelineColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="720" y="40" width="160" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#EEEEEE;strokeColor=#666666;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="791" y="420" width="16" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ll6" value="«Database»&lt;br&gt;PostgreSQL" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=44;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=1;fontColor=#333333;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=1.5;lifelineColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="890" y="40" width="160" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#EEEEEE;strokeColor=#666666;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="961" y="470" width="16" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="1. Chọn loại báo cáo&lt;br&gt;(khoảng thời gian / bộ lọc)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=18;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="112" y="205" as="sourcePoint" />
+            <mxPoint x="282" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="2. GET&lt;br&gt;/api/v1/reports/summary" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=18;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="282" y="262" as="sourcePoint" />
+            <mxPoint x="452" y="262" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="3. getReportData&lt;br&gt;(filters)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=18;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="452" y="319" as="sourcePoint" />
+            <mxPoint x="622" y="319" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="4. Kiểm tra điều kiện&lt;br&gt;và quyền truy cập" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=18;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="622" y="376" as="sourcePoint" />
+            <mxPoint x="792" y="376" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="5. SELECT ... GROUP BY&lt;br&gt;(tổng hợp tại PostgreSQL)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=18;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="792" y="433" as="sourcePoint" />
+            <mxPoint x="962" y="433" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="6. dữ liệu thô đã truy vấn" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;endSize=8;fontFamily=Arial;fontSize=18;fontColor=#333333;strokeColor=#333333;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="962" y="490" as="sourcePoint" />
+            <mxPoint x="792" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="7. dữ liệu truy vấn" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;endSize=8;fontFamily=Arial;fontSize=18;fontColor=#333333;strokeColor=#333333;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="792" y="547" as="sourcePoint" />
+            <mxPoint x="622" y="547" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="8. Tổng hợp số liệu,&lt;br&gt;trả kết quả báo cáo" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;endSize=8;fontFamily=Arial;fontSize=18;fontColor=#333333;strokeColor=#333333;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="622" y="604" as="sourcePoint" />
+            <mxPoint x="452" y="604" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9" value="9. 200 OK + dữ liệu báo cáo" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;endSize=8;fontFamily=Arial;fontSize=18;fontColor=#333333;strokeColor=#333333;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="452" y="661" as="sourcePoint" />
+            <mxPoint x="282" y="661" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="10. Hiển thị chỉ số, bảng, biểu đồ" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;endSize=8;fontFamily=Arial;fontSize=18;fontColor=#333333;strokeColor=#333333;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="282" y="718" as="sourcePoint" />
+            <mxPoint x="112" y="718" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

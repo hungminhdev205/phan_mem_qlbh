@@ -1,0 +1,83 @@
+<mxfile host="app.diagrams.net" modified="2026-10-07T00:00:00.000Z" agent="opencode" version="24.7.17" type="device">
+  <diagram id="arch-client002" name="Hình 2.x. Kiến trúc Desktop Client">
+    <mxGraphModel dx="1200" dy="1500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="920" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="shell" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=13;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="30" y="40" width="1000" height="830" as="geometry" />
+        </mxCell>
+        <mxCell id="shelltitle" value="&lt;b&gt;ỨNG DỤNG DESKTOP — ELECTRON + REACT&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="45" y="55" width="700" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="mainproc" value="&lt;b&gt;Electron Main Process&lt;/b&gt;&lt;br&gt;Khởi tạo cửa sổ, quản lý vòng đời,&lt;br&gt;xử lý chức năng Desktop" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=13;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="100" y="120" width="420" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="preload" value="&lt;b&gt;Preload Script&lt;/b&gt;&lt;br&gt;Cầu nối an toàn (contextBridge),&lt;br&gt;giới hạn API cho Renderer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=13;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="100" y="290" width="420" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ipc1" value="IPC" style="edgeStyle=none;html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=12;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="210" as="sourcePoint" />
+            <mxPoint x="310" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ipc2" value="preload API (contextBridge)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=12;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="370" as="sourcePoint" />
+            <mxPoint x="310" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="renderer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF5FB;strokeColor=#6C8EBF;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=13;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="100" y="440" width="880" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="rendertitle" value="&lt;b&gt;Renderer Process — Giao diện React&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="120" y="458" width="360" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="pages" value="&lt;b&gt;Pages&lt;/b&gt;&lt;br&gt;Đăng nhập, Dashboard, Quản lý sản phẩm /&lt;br&gt;nhân viên / khách hàng / kho / tồn kho /&lt;br&gt;bảng giá / giao dịch, Báo cáo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="140" y="510" width="480" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="components" value="&lt;b&gt;Components&lt;/b&gt;&lt;br&gt;Bảng dữ liệu, biểu mẫu nhập liệu, hộp thoại,&lt;br&gt;thanh điều hướng — tái sử dụng nhiều màn hình" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="140" y="660" width="480" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="services" value="&lt;b&gt;Services&lt;/b&gt;&lt;br&gt;Tạo Request, gọi API,&lt;br&gt;xử lý Response,&lt;br&gt;quản lý JWT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="680" y="510" width="260" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="restclient" value="&lt;b&gt;REST API Client&lt;/b&gt;&lt;br&gt;Gửi HTTP (axios / fetch),&lt;br&gt;Header Authorization + JWT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="680" y="690" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ez1" value="sử dụng" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=12;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="620" as="sourcePoint" />
+            <mxPoint x="380" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez2" value="gọi" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=12;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="565" as="sourcePoint" />
+            <mxPoint x="680" y="565" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez3" value="" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=12;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="810" y="640" as="sourcePoint" />
+            <mxPoint x="810" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4" value="HTTP + JSON (+ JWT)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=12;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="940" y="730" as="sourcePoint" />
+            <mxPoint x="1160" y="605" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1100" y="730" />
+              <mxPoint x="1100" y="605" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="spring" value="&lt;b&gt;Spring Boot Backend&lt;/b&gt;&lt;br&gt;Nhận Request, xử lý nghiệp vụ,&lt;br&gt;trả Response (JSON) qua RESTful API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=13;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="540" width="300" height="130" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -5,9 +5,12 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+import com.app.backend.common.enums.RecordType;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.dialect.type.PostgreSQLEnumJdbcType;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -46,6 +49,15 @@ public class Account {
     @NotNull
     @Column(name = "password", nullable = false)
     private String password;
+
+    @ColumnDefault("'active'")
+    @Enumerated(EnumType.STRING)
+    @JdbcType(PostgreSQLEnumJdbcType.class)
+    @Column(name = "status", columnDefinition = "record_type not null")
+    private RecordType status;
+
+    @Column(name = "last_login_at")
+    private OffsetDateTime lastLoginAt;
 
     @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "created_at")

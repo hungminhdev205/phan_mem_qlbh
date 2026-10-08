@@ -15,7 +15,6 @@ BEGIN
 END;
 $$;
 
-
 CREATE OR REPLACE FUNCTION auth.get_account_info (
     p_account_id BIGINT
 )
@@ -29,6 +28,7 @@ BEGIN
         SELECT 1
         FROM auth.accounts
         WHERE id = p_account_id
+          AND status = 'active'::public.record_type
     ) THEN
         RETURN public.fs_response(FALSE, 'error.account.not_found'::TEXT, NULL::JSONB);
     END IF;
@@ -77,29 +77,29 @@ BEGIN
                 )
             END
         ),
-        'employee', CASE
-            WHEN e.id IS NULL THEN NULL
+        'store', CASE
+            WHEN s.id IS NULL THEN NULL
             ELSE jsonb_build_object(
-                'uuid', e.uuid,
-                'status', e.status,
-                'company', CASE
-                    WHEN c.id IS NULL THEN NULL
-                    ELSE jsonb_build_object(
-                        'uuid', c.uuid,
-                        'name', c.name,
-                        'address', c.address,
-                        'phone', c.phone,
-                        'email', c.email,
-                        'taxCode', c.tax_code,
-                        'status', c.status
-                    )
-                END
+                'uuid', s.uuid,
+                'name', s.name,
+                'address', s.address,
+                'phone', s.phone,
+                'email', s.email,
+                'taxCode', s.tax_code,
+                'status', s.status
             )
         END,
+        'employee', jsonb_build_object(
+            'uuid', e.uuid,
+            'employeeCode', e.employee_code,
+            'positionName', e.position_name,
+            'status', e.status
+        ),
         'role', CASE
             WHEN r.id IS NULL THEN NULL
             ELSE jsonb_build_object(
                 'uuid', r.uuid,
+                'code', r.code,
                 'name', r.name,
                 'description', r.description
             )
@@ -119,15 +119,15 @@ BEGIN
     )
     INTO v_data
     FROM auth.accounts a
-    LEFT JOIN auth.profiles p ON p.fk_account_id = a.id
+    JOIN auth.profiles p ON p.fk_account_id = a.id
+    JOIN business.employees e ON e.fk_account_id = a.id
     LEFT JOIN public.images i ON i.id = p.fk_image_id
-    LEFT JOIN business.employees e ON e.fk_account_id = a.id
-    LEFT JOIN business.companies c ON c.id = e.fk_company_id
+    LEFT JOIN business.companies s ON s.id = 1
     LEFT JOIN auth.roles r ON r.id = e.fk_role_id
     LEFT JOIN auth.role_permissions rp ON rp.fk_role_id = r.id
     LEFT JOIN auth.permissions pe ON pe.id = rp.fk_permission_id
     WHERE a.id = p_account_id
-    GROUP BY a.id, p.id, i.id, e.id, c.id, r.id;
+    GROUP BY a.id, p.id, i.id, s.id, e.id, r.id;
 
     RETURN public.fs_response(TRUE, 'success.account.info'::TEXT, v_data);
 END;

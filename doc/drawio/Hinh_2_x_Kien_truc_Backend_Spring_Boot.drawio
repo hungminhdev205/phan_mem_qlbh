@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net" modified="2026-10-07T00:00:00.000Z" agent="opencode" version="24.7.17" type="device">
+  <diagram id="arch-be003" name="Hình 2.x. Kiến trúc Backend Spring Boot">
+    <mxGraphModel dx="1200" dy="1500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1240" pageHeight="860" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="reqbox" value="&lt;b&gt;HTTP Request&lt;/b&gt;&lt;br&gt;từ Desktop Client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="30" y="60" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="resbox" value="&lt;b&gt;HTTP Response&lt;/b&gt;&lt;br&gt;về Desktop Client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="30" y="180" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sec" value="&lt;b&gt;Security&lt;/b&gt;&lt;br&gt;Spring Security + JWT — xác thực &amp; phân quyền&lt;br&gt;trước khi yêu cầu vào Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="60" width="620" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl" value="&lt;b&gt;Controller&lt;/b&gt;&lt;br&gt;Endpoint REST, tiếp nhận Request,&lt;br&gt;điều phối sang Service, trả Response" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="180" width="620" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="svc" value="&lt;b&gt;Service&lt;/b&gt;&lt;br&gt;Xử lý nghiệp vụ: kiểm tra, tính toán,&lt;br&gt;phối hợp Repository, quản lý transaction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="300" width="620" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="repo" value="&lt;b&gt;Repository&lt;/b&gt;&lt;br&gt;Spring Data JPA / Native Query —&lt;br&gt;thao tác truy cập dữ liệu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="420" width="620" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="orm" value="&lt;b&gt;JPA / Hibernate / JDBC&lt;/b&gt;&lt;br&gt;Ánh xạ Entity ↔ bảng,&lt;br&gt;thực thi truy vấn SQL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="540" width="620" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pgdb" value="&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;br&gt;CSDL quan hệ — lưu trữ dữ liệu tập trung" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=1.5;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="660" width="620" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dto" value="&lt;b&gt;DTO&lt;/b&gt;&lt;br&gt;Trao đổi dữ liệu giữa Client và Backend,&lt;br&gt;hạn chế lộ Entity ra ngoài API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673A6;strokeWidth=1.5;dashed=1;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="840" y="60" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="exch" value="&lt;b&gt;Exception Handler&lt;/b&gt;&lt;br&gt;Chuyển lỗi thành cấu trúc Response thống nhất" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673A6;strokeWidth=1.5;dashed=1;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="840" y="180" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="common" value="&lt;b&gt;Common&lt;/b&gt;&lt;br&gt;Cấu trúc Response tiêu chuẩn,&lt;br&gt;tiện ích dùng chung" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673A6;strokeWidth=1.5;dashed=1;verticalAlign=middle;align=center;fontFamily=Arial;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="840" y="300" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" value="" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=12;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="100" as="sourcePoint" />
+            <mxPoint x="180" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f2" value="Request hợp lệ" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=11;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="140" as="sourcePoint" />
+            <mxPoint x="500" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f3" value="Gọi nghiệp vụ" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=11;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="260" as="sourcePoint" />
+            <mxPoint x="500" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f4" value="Truy vấn / thao tác dữ liệu" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=11;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="380" as="sourcePoint" />
+            <mxPoint x="500" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f5" value="Spring Data JPA" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=11;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="500" as="sourcePoint" />
+            <mxPoint x="500" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f6" value="SQL / JDBC" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=11;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="620" as="sourcePoint" />
+            <mxPoint x="500" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f7" value="" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontFamily=Arial;fontSize=12;fontColor=#000000;strokeColor=#000000;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="220" as="sourcePoint" />
+            <mxPoint x="160" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f8" value="bắt lỗi" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;endSize=8;fontFamily=Arial;fontSize=11;fontColor=#666666;strokeColor=#666666;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="220" as="sourcePoint" />
+            <mxPoint x="840" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f9" value="dùng chung" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;endSize=8;fontFamily=Arial;fontSize=11;fontColor=#666666;strokeColor=#666666;strokeWidth=1.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="340" as="sourcePoint" />
+            <mxPoint x="840" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

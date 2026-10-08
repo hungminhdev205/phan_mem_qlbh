@@ -1,24 +1,47 @@
-import { ApiSuccess, request } from '@renderer/libs'
-import { AccountProfile, LoginPayload, LoginResponse } from './types'
+import { CONFIG } from '@renderer/libs/config'
+import type { LoginRequest, LoginResponse, UserInfo } from '../types'
 
-export async function login(payload: LoginPayload, language: string): Promise<string> {
-  const response = await request<ApiSuccess<LoginResponse>>('/auth/login', {
+const BASE_URL = CONFIG.DEFAULT_BACKEND_URL
+
+export async function loginApi(credentials: LoginRequest): Promise<LoginResponse> {
+  const response = await fetch(`${BASE_URL}/api/v1/auth/login`, {
     method: 'POST',
-    language,
-    body: JSON.stringify(payload)
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+    body: JSON.stringify(credentials)
   })
 
-  return response.data.token
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => null)
+    const errorMsg =
+      errorData?.detail ||
+      errorData?.msg ||
+      errorData?.message ||
+      'Tài khoản hoặc mật khẩu không đúng'
+    throw new Error(errorMsg)
+  }
+
+  const result = await response.json()
+  const token =
+    result?.data?.token || result?.token || result?.data?.accessToken || result?.accessToken || ''
+  return { token }
 }
 
-export async function getMe(token: string, language: string): Promise<AccountProfile> {
-  const response = await request<ApiSuccess<AccountProfile>>('/auth/me', {
+export async function getMeApi(token: string): Promise<UserInfo> {
+  const response = await fetch(`${BASE_URL}/api/v1/auth/me`, {
     method: 'GET',
-    language,
     headers: {
+      Accept: 'application/json',
       Authorization: `Bearer ${token}`
     }
   })
 
-  return response.data
+  if (!response.ok) {
+    throw new Error('Phiên đăng nhập đã hết hạn hoặc không hợp lệ')
+  }
+
+  const result = await response.json()
+  return (result?.data || result) as UserInfo
 }

@@ -1,0 +1,106 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Màu thương hiệu & Nút bấm chính */
+  --color-brand: #1d4ed8;
+  --color-brand-hover: #1e40af;
+  --color-brand-active: #172554;
+
+  /* Nền và Bề mặt ứng dụng */
+  --color-app-bg: #f0f4f9;
+  --color-card-bg: #ffffff;
+  --color-subtle-bg: #f8fafc;
+
+  /* Thanh tiêu đề cửa sổ */
+  --color-titlebar: #101820;
+  --color-titlebar-text: #ffffff;
+  --color-titlebar-muted: #cbd5e1;
+  --color-titlebar-mark: #c99a3d;
+  --color-titlebar-mark-text: #101820;
+  --color-titlebar-control: #cbd5e1;
+  --color-titlebar-control-hover: rgba(255, 255, 255, 0.1);
+  --color-titlebar-control-active: rgba(255, 255, 255, 0.16);
+  --color-control-close-hover: #dc2626;
+  --color-control-close-active: #b91c1c;
+
+  /* Đường viền & Input */
+  --color-border-main: #e2e8f0;
+  --color-border-subtle: #f1f5f9;
+  --color-input-border: #cbd5e1;
+  --color-input-border-hover: #94a3b8;
+
+  /* Trạng thái nút bấm vô hiệu hóa */
+  --color-btn-disabled-bg: #f1f5f9;
+  --color-btn-disabled-hover: #e2e8f0;
+  --color-btn-disabled-text: #94a3b8;
+
+  /* Màu chữ */
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #64748b;
+  --color-text-tertiary: #94a3b8;
+  --color-text-inverse: #ffffff;
+
+  /* Trạng thái Online */
+  --color-status-online: #10b981;
+  --color-status-online-bg: #ecfdf5;
+  --color-status-online-border: #a7f3d0;
+  --color-status-online-text: #047857;
+
+  /* Trạng thái Offline / Báo lỗi */
+  --color-status-offline: #ef4444;
+  --color-status-offline-bg: #fef2f2;
+  --color-status-offline-border: #fecaca;
+  --color-status-offline-text: #b91c1c;
+
+  /* Trạng thái Đang kiểm tra / Cảnh báo */
+  --color-status-checking: #f59e0b;
+  --color-status-checking-bg: #fffbeb;
+  --color-status-checking-border: #fde68a;
+  --color-status-checking-text: #b45309;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  user-select: none;
+  font-family:
+    'Be Vietnam Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background-color: var(--color-app-bg);
+  color: var(--color-text-primary);
+}
+
+/* Hiệu ứng Toast Notification */
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes toast-progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.animate-toast-in {
+  animation: toast-slide-in 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

@@ -10,6 +10,8 @@ spring:
       pool-name: data-gold-chuan2026
       maximum-pool-size: 20
       minimum-idle: 10
+  flyway:
+    baseline-on-migrate: true
 
 jwt:
   secret: QE5jUmZValhuMnI1dTh4L0E/RChHK0tiUGRTZ1ZrWXA=

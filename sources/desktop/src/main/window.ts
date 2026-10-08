@@ -1,13 +1,14 @@
-import { shell, BrowserWindow } from 'electron'
+import { BrowserWindow, shell } from 'electron'
 import { join } from 'path'
 import { is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
-export function createWindow(): BrowserWindow {
+export default function createWindow(): void {
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    minHeight: 670,
+    minWidth: 900,
     show: false,
+    frame: false,
     autoHideMenuBar: true,
     icon,
     webPreferences: {
@@ -18,6 +19,7 @@ export function createWindow(): BrowserWindow {
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
+    mainWindow.maximize()
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
@@ -30,6 +32,4 @@ export function createWindow(): BrowserWindow {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
-
-  return mainWindow
 }
